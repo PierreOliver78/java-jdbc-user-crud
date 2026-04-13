@@ -15,8 +15,8 @@ public class TesteBancoJdbc {
 		Userposjava userposjava = new Userposjava();
 
 		
-		userposjava.setNome("Inês Teste");
-		userposjava.setEmail("inesteste@gmail.com");
+		userposjava.setNome("Rogério");
+		userposjava.setEmail("rogerioteste@gmail.com");
 
 		userPosDAO.salvar(userposjava);
 
@@ -62,9 +62,9 @@ public class TesteBancoJdbc {
 
 			UserPosDAO dao = new UserPosDAO();
 
-			Userposjava objetoBanco = dao.buscar(8L);
+			Userposjava objetoBanco = dao.buscar(2L);
 
-			objetoBanco.setNome("Carlos");
+			objetoBanco.setNome("Luana");
 
 			dao.atualizar(objetoBanco);
 
@@ -72,6 +72,21 @@ public class TesteBancoJdbc {
 			e.printStackTrace();
 		}
 
+	}
+	
+	
+	@Test
+	public void initDelete() {
+		try {
+			
+			UserPosDAO dao = new UserPosDAO();			
+			dao.deletar(11L);	 
+					
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }
