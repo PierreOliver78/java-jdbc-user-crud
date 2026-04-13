@@ -14,7 +14,7 @@ public class TesteBancoJdbc {
 		UserPosDAO userPosDAO = new UserPosDAO();
 		Userposjava userposjava = new Userposjava();
 
-		userposjava.setId(6L);
+		
 		userposjava.setNome("Inês Teste");
 		userposjava.setEmail("inesteste@gmail.com");
 
@@ -62,9 +62,9 @@ public class TesteBancoJdbc {
 
 			UserPosDAO dao = new UserPosDAO();
 
-			Userposjava objetoBanco = dao.buscar(6L);
+			Userposjava objetoBanco = dao.buscar(8L);
 
-			objetoBanco.setNome("Inês Teste");
+			objetoBanco.setNome("Carlos");
 
 			dao.atualizar(objetoBanco);
 
