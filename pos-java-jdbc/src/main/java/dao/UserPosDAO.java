@@ -105,17 +105,18 @@ public class UserPosDAO {
 
 	}
 	
-	public List<BeanUserFone> listaUserFones(Long idUser){
+	public List<BeanUserFone> listaUserFone(Long idUser){
 		
 		List<BeanUserFone> beanUserFones = new ArrayList<BeanUserFone>();
 		
 		
 		try {
 		
-		String sql = "select nome, numero, email from telefoneuser as fone";
-		sql += "inner join userposjava as userp";
-		sql += "on fone.usuariopessoa = userp.id";
+		String sql = " select nome, numero, email from telefoneuser as fone ";
+		sql += "inner join userposjava as userp ";
+		sql += "on fone.usuariopessoa = userp.id ";
 		sql += "where userp.id = " + idUser;
+		
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
 		ResultSet resultSet = statement.executeQuery();
@@ -129,10 +130,11 @@ public class UserPosDAO {
 			beanUserFones.add(userFone);
 		}
 		
-		return beanUserFones;
+		
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		return beanUserFones;
 		
 	}
 
