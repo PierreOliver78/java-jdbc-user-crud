@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Test;
 
 import dao.UserPosDAO;
+import model.Telefone;
 import model.Userposjava;
 
 public class TesteBancoJdbc {
@@ -80,10 +81,31 @@ public class TesteBancoJdbc {
 		try {
 			
 			UserPosDAO dao = new UserPosDAO();			
-			dao.deletar(11L);	 
+			dao.deletar(5L);	 
 					
 			
 		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Test
+	public void insertTelefone() {
+		try {
+			
+						
+			Telefone telefone = new Telefone();
+			telefone.setNumero("(47)3425-6578");
+			telefone.setTipo("Casa");
+			telefone.setUsuario(9L);
+			
+			UserPosDAO dao = new UserPosDAO();
+			dao.salvarTefefone(telefone);
+			
+			
+			
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
