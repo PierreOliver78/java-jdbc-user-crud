@@ -82,7 +82,7 @@ public class TesteBancoJdbc {
 		try {
 			
 			UserPosDAO dao = new UserPosDAO();			
-			dao.deletar(5L);	 
+			dao.deletar(9L);	 
 					
 			
 		}catch (Exception e) {
@@ -131,6 +131,14 @@ public class TesteBancoJdbc {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+	}
+	
+	@Test
+	public void testeDeleteUserFone() {
+		
+		UserPosDAO dao = new UserPosDAO();
+		dao.deleteFonesPorUser(9L);
 		
 	}
 
